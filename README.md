@@ -13,6 +13,8 @@
 code you want to run in a distributed environment.
 * Replace `template` and `Template` references with your project name.
 
+You should now be good to go!
+
 ## Installation
 
     $ cd peplum-template
