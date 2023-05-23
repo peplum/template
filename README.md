@@ -6,6 +6,8 @@
 
 * Clone this repo:
   * `$ git clone git@github.com:peplum/peplum-template.git`
+* Remove current git repo:
+  * `$ rm -rf peplum-template/.git`
 * Fill in [template/native.rb](https://github.com/peplum/template/blob/master/lib/peplum/template/native.rb) with the 
 code you want to run in a distributed environment.
 * Replace `template` and `Template` with your project name.
