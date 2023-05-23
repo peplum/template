@@ -13,9 +13,14 @@
 code you want to run in a distributed environment.
 * Replace `template` and `Template` references with your project name.
 
+## Installation
+
+    $ cd peplum-template
+    $ bundle install
+
 ## Usage
 
-See the `examples/` directory.
+See the [examples/](https://github.com/peplum/template/blob/master/examples/) directory.
 
 ### Grid
 
