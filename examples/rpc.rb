@@ -15,7 +15,7 @@ template.run(
     objects:     [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
     max_workers: 5
   },
-  native: {
+  payload: {
     my_option_bool:   true,
     my_option_array:  [1,2,3],
     my_option_hash:   { 4 => '5', '6' => 7 }

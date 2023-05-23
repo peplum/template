@@ -9,7 +9,7 @@
 * Remove current git repo:
   * `$ rm -rf peplum-template/.git`
 * Fill in [template/application.rb](https://github.com/peplum/template/blob/master/lib/peplum/template/application.rb).
-* Fill in [template/application/native.rb](https://github.com/peplum/template/blob/master/lib/peplum/template/application/native.rb) with the 
+* Fill in [template/application/payload.rb](https://github.com/peplum/template/blob/master/lib/peplum/template/application/payload.rb) with the 
 code you want to run in a distributed environment.
 * Replace `template` and `Template` references with your project name.
 

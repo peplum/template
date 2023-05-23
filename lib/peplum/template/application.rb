@@ -6,7 +6,7 @@ module Peplum
 class Template
 
 class Application < Peplum::Application
-  require_relative "application/native"
+  require_relative "application/payload"
   require_relative 'application/services/my_service'
 
   # TODO: Adjust accordingly.
@@ -18,8 +18,8 @@ class Application < Peplum::Application
   # TODO: Is a service necessary?
   instance_service_for :my_service, Services::MyService
 
-  def native_app
-    Native
+  def payload
+    Payload
   end
 
 end

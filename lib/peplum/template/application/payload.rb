@@ -2,7 +2,7 @@ module Peplum
 class Template
 class Application
 
-module Native
+module Payload
 
   # TODO: Populate it with some actual payload code.
   #
