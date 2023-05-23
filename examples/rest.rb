@@ -29,6 +29,9 @@ request :post, 'instances', {
     max_workers: 5
   },
   native: {
+    my_option_bool:   true,
+    my_option_array:  [1,2,3],
+    my_option_hash:   { 4 => '5', '6' => 7 }
   }
 }
 
