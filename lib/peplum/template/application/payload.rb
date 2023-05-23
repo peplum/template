@@ -14,6 +14,8 @@ module Payload
   def run( objects, options )
     # Signal that we started work or something to our peers...
     Template::Application.shared_hash.set( Process.pid, options )
+    # ...wait for changes to take effect everywhere.
+    Template::Application.shared_hash.sync
 
     # Access peer's services.
     Template::Application.peers.each do |peer|
