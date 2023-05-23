@@ -12,13 +12,22 @@ module Payload
   # @param  [Hash, NilClass]  options Worker options.
   # @abstract
   def run( objects, options )
-    # Signal that we started work or something to our peers...
+    # Signal that we started work or something to our peers by PID.
     Template::Application.shared_hash.set( Process.pid, options )
 
     # Access peer's services.
     Template::Application.peers.each do |peer|
       p peer.my_service.foo
       pp peer.my_service.shared_hash_to_hash
+    end
+
+    # We're setting our status to 2, or something.
+    Template::Application.shared_hash.set( Cuboid::Options.rpc.url, 2 )
+
+    # Wait for the last peer to set its status.
+    last_peer_url = Template::Application.peers.to_a.last.url
+    Template::Application.shared_hash.on_set last_peer_url do |v|
+      ap "[#{last_peer_url}] Status: #{v}"
     end
 
     pp [objects, options]
