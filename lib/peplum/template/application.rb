@@ -18,6 +18,11 @@ class Application < Peplum::Application
   # TODO: Is a service necessary?
   instance_service_for :my_service, Services::MyService
 
+  # TODO: Is this service necessary?
+  #
+  # Theres already `Template::Application.shared_hash` but if you need more you can add them here.
+  instance_service_for :my_hash, Peplum::Application::Services::SharedHash
+
   def payload
     Payload
   end

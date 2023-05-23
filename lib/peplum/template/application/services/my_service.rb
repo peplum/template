@@ -8,8 +8,8 @@ class MyService
     'bar'
   end
 
-  def shared_hash_to_hash
-    Template::Application.shared_hash.to_h
+  def my_hash_to_hash
+    Template::Application.my_hash.to_h
   end
 
 end

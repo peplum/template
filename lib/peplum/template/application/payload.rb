@@ -13,12 +13,12 @@ module Payload
   # @abstract
   def run( objects, options )
     # Signal that we started work or something to our peers by PID.
-    Template::Application.shared_hash.set( Process.pid, options )
+    Template::Application.my_hash.set( Process.pid, options )
 
     # Access peer's services.
     Template::Application.peers.each do |peer|
       p peer.my_service.foo
-      pp peer.my_service.shared_hash_to_hash
+      pp peer.my_service.my_hash_to_hash
     end
 
     # We're setting our status to 2, or something.
@@ -29,6 +29,8 @@ module Payload
     Template::Application.shared_hash.on_set last_peer_url do |v|
       ap "[#{last_peer_url}] Status: #{v}"
     end
+
+    ap Template::Application.my_hash.to_h
 
     pp [objects, options]
   end
