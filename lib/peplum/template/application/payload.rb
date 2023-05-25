@@ -35,15 +35,15 @@ module Payload
     pp [objects, options]
   end
 
-  # Distribute `objects` into `chunks` amount of groups, one for each worker.
+  # Distribute `objects` into `groups_of` amount of groups, one for each worker.
   #
   # @param  [Array] objects All objects that need to be processed.
-  # @param  [Integer] chunks  Amount of object groups that should be generated.
+  # @param  [Integer] groups_of  Amount of object groups that should be generated.
   #
   # @return [Array<Array<Object>>]  `objects` split in `chunks` amount of groups
   # @abstract
-  def group( objects, chunks )
-    objects.chunk chunks
+  def split( objects, groups_of )
+    objects.chunk groups_of
   end
 
   # TODO: Populate it with some actual merging code.
