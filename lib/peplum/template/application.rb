@@ -23,6 +23,13 @@ class Application < Peplum::Application
   # Theres already `Template::Application.shared_hash` but if you need more you can add them here.
   instance_service_for :my_hash, Peplum::Application::Services::SharedHash
 
+  # @return [#run, #split, #merge]
+  #
+  #   * `#run` -- Worker; executes its payload against `objects`.
+  #   * `#split` -- Scheduler; splits given `objects` into groups for each worker.
+  #   * `#merge` -- Scheduler; merges results from multiple workers.
+  #
+  #   That's all we need to turn any application into a super version of itself.
   def payload
     Payload
   end
